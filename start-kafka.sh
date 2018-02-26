@@ -48,6 +48,9 @@ if [[ -n "$KAFKA_LISTENER_SECURITY_PROTOCOL_MAP" ]]; then
 
   if [[ -n "$KAFKA_PORT" && -n "$KAFKA_PROTOCOL_NAME" ]]; then
     export ADD_LISTENER="${KAFKA_PROTOCOL_NAME}://${KAFKA_HOST_NAME-}:${KAFKA_PORT}"
+    echo "in creating add listener"
+    echo "kafka protocol name is $KAFKA_PROTOCOL_NAME"
+    echo "kafka host name is $KAFKA_HOST_NAME"
   fi
 
   if [[ -z "$KAFKA_INTER_BROKER_LISTENER_NAME" ]]; then
