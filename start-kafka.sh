@@ -4,6 +4,7 @@ if [[ -z "$KAFKA_PORT" ]]; then
     export KAFKA_PORT=9092
 fi
 
+echo "at the beginning, kafka port is $KAFKA_PORT"
 create-topics.sh &
 
 if [[ -z "$KAFKA_ADVERTISED_PORT" && \
