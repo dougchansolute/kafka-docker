@@ -71,6 +71,8 @@ if [[ -n "$ADD_LISTENER" && -n "$KAFKA_ADVERTISED_LISTENERS" ]]; then
   export KAFKA_ADVERTISED_LISTENERS="${KAFKA_ADVERTISED_LISTENERS},${ADD_LISTENER}"
   echo "Here are the kafka advertised listeners"
   echo $KAFKA_ADVERTISED_LISTENERS
+  echo "I added"
+  echo $ADD_LISTENER
 fi
 
 if [[ -n "$ADD_LISTENER" && -z "$KAFKA_ADVERTISED_LISTENERS" ]]; then
