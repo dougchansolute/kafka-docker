@@ -51,6 +51,7 @@ if [[ -n "$KAFKA_LISTENER_SECURITY_PROTOCOL_MAP" ]]; then
     echo "in creating add listener"
     echo "kafka protocol name is $KAFKA_PROTOCOL_NAME"
     echo "kafka host name is $KAFKA_HOST_NAME"
+    echo "kafka port is $KAFKA_PORT"
     echo "so add listener is $ADD_LISTENER"
   fi
 
