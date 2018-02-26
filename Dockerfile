@@ -8,7 +8,13 @@ MAINTAINER wurstmeister
 ENV KAFKA_VERSION=$kafka_version \
     SCALA_VERSION=$scala_version \
     KAFKA_HOME=/opt/kafka \
-    PATH=${PATH}:${KAFKA_HOME}/bin
+    PATH=${PATH}:${KAFKA_HOME}/bin \
+    KAFKA_ADVERTISED_PORT=9094 \
+    KAFKA_ADVERTISED_HOST_NAME=wmkafka-dataanalytics.apps.osetrial.aws-gov.solute.us \
+    KAFKA_ADVERTISED_PROTOCOL_NAME=OUTSIDE \
+    KAFKA_POROTOCOL_NAME=INSIDE
+
+
 
 COPY download-kafka.sh start-kafka.sh broker-list.sh create-topics.sh /tmp/
 
@@ -22,6 +28,8 @@ RUN apk add --update unzip wget curl docker jq coreutils \
  && rm /tmp/*
 
 VOLUME ["/kafka"]
+
+EXPOSE 9092 9094
 
 # Use "exec" form so that it runs as PID 1 (useful for graceful shutdown)
 CMD ["start-kafka.sh"]
