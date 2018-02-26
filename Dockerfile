@@ -10,6 +10,7 @@ ENV KAFKA_VERSION=$kafka_version \
     KAFKA_HOME=/opt/kafka \
     PATH=${PATH}:${KAFKA_HOME}/bin \
     KAFKA_ADVERTISED_PORT=9094 \
+    KAFKA_PORT=9092 \
     KAFKA_ADVERTISED_HOST_NAME=wmkafka-dataanalytics.apps.osetrial.aws-gov.solute.us \
     KAFKA_HOST_NAME=localhost \
     KAFKA_ADVERTISED_PROTOCOL_NAME=OUTSIDE \
